@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .gameContainer {
+            margin-top: 5rem;
+            display: grid;
+            width: 80%;
+            height: 20rem;
+            background-color: rgb(0, 0, 0);
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 100%;
+            grid-template-columns: 45% 10% 45%;
+            grid-template-rows: 45% 10% 45%;
+            padding: 10%;
+            border: solid 0.2rem rgb(122, 122, 122);
+        }
+
+        .button {
+            width: 100%;
+            height: 100%;
+        }
+
+        .startButton {
+            width: 8rem;
+            height: 2em;
+            background-color: rgb(0, 255, 0);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(110, 110, 110); user-select: none;">
+    <div class="container">
+        <div class="gameContainer" id="gameContainer">
+            <div class="button1 button" id="button1" style="background-color: red;
+            border-radius: 100% 2% 2% 2%;"></div>
+            <div></div>
+            <div class="button2 button" id="button2"
+                style="background-color: rgb(38, 0, 255); border-radius: 2% 100% 2% 2%;"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="button3 button" id="button3"
+                style="background-color: rgb(0, 255, 0); border-radius: 2% 2% 2% 100%;"></div>
+            <div></div>
+            <div class="button4 button" id="button4"
+                style="background-color: rgb(251, 255, 0); border-radius: 2% 2% 100% 2%;"></div>
+        </div>
+        <div class="startButton" id="startButton">Start!</div>
+    </div>
+    <script>
+        let button1 = document.getElementById("button1")
+        let button2 = document.getElementById("button2")
+        let button3 = document.getElementById("button3")
+        let button4 = document.getElementById("button4")
+
+        let startButton = document.getElementById("startButton")
+        startButton.addEventListener("click", () => {startGame()})
+
+        function setOpacity(element1, opacity1) {
+            element1.style.opacity = opacity1
+        }
+
+        setOpacity(button1, "50%")
+        setOpacity(button2, "50%")
+        setOpacity(button3, "50%")
+        setOpacity(button4, "50%")
+
+        function startGame() {
+            let count = 0
+            startButton.style.display = "none"
+            let arr = []
+
+            arr.push(Math.random() * 5)
+            setOpacity(button1, "100%")
+        }
+    </script>
+</body>
+
+</html>
